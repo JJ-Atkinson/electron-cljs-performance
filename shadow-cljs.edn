@@ -1,0 +1,23 @@
+{:deps {:aliases [:build-server :dev]}
+ :dev-http {}
+ :nrepl false
+ :builds
+ {:electron/main
+  {:target :node-script
+   :output-dir "resources/electron/main/assets"
+   :asset-path "/assets"
+   :main dev.freeformsoftware.electron-performance.main-proc/main
+   :output-to "resources/electron/main/assets/main.js"
+   :modules {:main {:init-fn dev.freeformsoftware.electron-performance.main-proc/start}}
+   :devtools {:after-load dev.freeformsoftware.electron-performance.main-proc/reload}
+   :compiler-options {:optimizations :simple
+                      :output-feature-set :es2020}}
+
+  :electron/render
+  {:target :browser
+   :output-dir "resources/electron/render/assets"
+   :asset-path "/assets"
+   :modules {:main {:init-fn dev.freeformsoftware.electron-performance.render-proc/main}}
+   :devtools {:after-load dev.freeformsoftware.electron-performance.render-proc/reload}
+   :compiler-options {:optimizations :simple
+                      :output-feature-set :browser-2021}}}}

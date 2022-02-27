@@ -1,0 +1,11 @@
+{:paths ["src/main" "resources"]
+
+ :deps {org.clojure/clojure {:mvn/version "1.10.3"}}
+ :aliases
+ {:dev {:extra-deps {}}
+
+  :build-server {:extra-deps
+                 {nrepl/nrepl {:mvn/version "0.9.0"}
+                  thheller/shadow-cljs {:mvn/version "2.17.5"}}
+
+                 :exec-fn user/-start-nrepl}}}

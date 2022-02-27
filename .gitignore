@@ -1,0 +1,10 @@
+/resources/electron/main/assets/cljs-runtime/
+/resources/electron/render/assets/cljs-runtime/
+/node_modules/
+/.shadow-cljs/
+/.idea/
+/.cpcache/
+/.nrepl-port
+/electron-cljs-performance.iml
+/resources/electron/main/assets/main.js
+/resources/electron/render/assets/main.js
